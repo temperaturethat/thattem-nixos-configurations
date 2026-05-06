@@ -1,8 +1,13 @@
+{ config, lib, ... }:
+
 {
 
-  services.btrfs.autoScrub = {
-    enable = true;
-    interval = "weekly";
+  config = lib.mkIf config.thattem.nixos.hardware.enable {
+
+    services.btrfs.autoScrub = {
+      enable = true;
+      interval = "weekly";
+    };
   };
 
 }
