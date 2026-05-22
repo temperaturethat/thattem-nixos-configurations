@@ -2,18 +2,25 @@
 
 {
 
-  config = lib.mkIf config.thattem.nixos.special.enable (
-    lib.mkIf config.thattem.nixos.programming.enable {
+  config = lib.mkIf config.thattem.nixos.programming.enable (
+    lib.mkMerge [
 
-      users.users.programmer = {
-        isNormalUser = true;
-        name = "programmer";
-        description = "Programmer";
-        home = "/home/programmer";
-        extraGroups = [ "wheel" ];
-        hashedPasswordFile = config.thattem.secrets.passwords.users.programmer.path;
-      };
-    }
+      {
+        users.users.programmer = {
+          isNormalUser = true;
+          name = "programmer";
+          description = "Programmer";
+          extraGroups = [ "wheel" ];
+        };
+      }
+
+      (lib.mkIf config.thattem.nixos.special.enable {
+        users.users.programmer = {
+          hashedPasswordFile = config.thattem.secrets.passwords.users.programmer.path;
+        };
+      })
+
+    ]
   );
 
 }
