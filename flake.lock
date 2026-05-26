@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1779357205,
-        "narHash": "sha256-cCO8aTqss5x9Ky8GWkpY0Hy5fyTZEbtifSUV8QjSzic=",
+        "lastModified": 1779560665,
+        "narHash": "sha256-tpyBcxPpcQb8ukyNF7DoCwfSY3VPsxHoYwj00Cayv5o=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f83fc3c307e74bc5fd5adb7eb6b8b13ffd2a36e1",
+        "rev": "64c08a7ca051951c8eae34e3e3cb1e202fe36786",
         "type": "github"
       },
       "original": {
@@ -25,11 +25,11 @@
     },
     "thattem-nixos-options": {
       "locked": {
-        "lastModified": 1777713665,
-        "narHash": "sha256-GbwsDyNiHkoJCiTfT0PqDz5D7Sp7PcGZeHLInwkWolY=",
+        "lastModified": 1779812337,
+        "narHash": "sha256-jnv0WgZeQ+TGbgspEQE708A/TJ/UgbuBgzYOWZTMy4I=",
         "owner": "thattemperature",
         "repo": "thattem-nixos-options",
-        "rev": "3d0baaa410d8b29cfb7172cd073c1119ab98bd00",
+        "rev": "faf8cef4ee5e426b1db927c0ad0bec756c4660e0",
         "type": "github"
       },
       "original": {
