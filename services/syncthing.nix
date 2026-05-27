@@ -6,17 +6,7 @@
     lib.mkMerge [
 
       {
-        services.syncthing =
-          let
-            userName = "thattemperature";
-            user = config.users.users.${userName};
-          in
-          {
-            enable = true;
-            user = userName;
-            group = user.group;
-            dataDir = user.home;
-          };
+        services.syncthing.enable = true;
       }
 
       (lib.mkIf config.thattem.nixos.special.enable {
