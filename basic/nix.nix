@@ -21,9 +21,9 @@
     })
 
     (lib.mkIf config.thattem.nixos.special.enable (
-      lib.mkIf (config.thattem.secrets.github-token.path != null) {
+      lib.mkIf (config.thattem.secrets.nix-configurations.path != null) {
 
-        nix.extraOptions = "!include ${config.thattem.secrets.github-token.path}";
+        nix.extraOptions = "!include ${config.thattem.secrets.nix-configurations.path}";
 
       }
     ))
