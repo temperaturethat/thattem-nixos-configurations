@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ./gdm.nix
+    ./sddm.nix
     ./programmer.nix
     ./root.nix
     ./thattemperature.nix

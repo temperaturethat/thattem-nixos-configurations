@@ -4,7 +4,9 @@
 
   config = lib.mkIf config.thattem.nixos.desktop.enable {
 
-    services.displayManager.gdm.enable = true;
+    # SDDM with native Wayland — no xserver needed
+    services.displayManager.sddm.enable = true;
+    services.displayManager.sddm.wayland.enable = true;
     programs.hyprland.enable = true;
 
     # Hint Electron apps to use Wayland
