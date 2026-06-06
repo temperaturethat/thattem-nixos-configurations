@@ -1,20 +1,21 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 {
 
   config = lib.mkIf config.thattem.nixos.desktop.enable {
 
-    services = {
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-      xserver = {
-        enable = true;
-        xkb = {
-          layout = "us";
-          variant = "";
-        };
-      };
+    services.displayManager.gdm.enable = true;
+    programs.hyprland.enable = true;
+
+    # Hint Electron apps to use Wayland
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+    # Required for screensharing
+    xdg.portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
     };
+
   };
 
 }
