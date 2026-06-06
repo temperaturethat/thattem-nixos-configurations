@@ -4,9 +4,9 @@
 
   config = lib.mkIf config.thattem.nixos.desktop.enable {
 
-    # SDDM with native Wayland — no xserver needed
+    # SDDM login screen on X11 (stable, cursor works); Hyprland desktop on Wayland
     services.displayManager.sddm.enable = true;
-    services.displayManager.sddm.wayland.enable = true;
+    services.xserver.enable = true;
     programs.hyprland.enable = true;
 
     # Hint Electron apps to use Wayland
