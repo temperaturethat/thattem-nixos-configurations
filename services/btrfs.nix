@@ -6,7 +6,7 @@
 
     services.btrfs.autoScrub = {
       enable = true;
-      interval = "weekly";
+      interval = "daily";
     };
   };
 
